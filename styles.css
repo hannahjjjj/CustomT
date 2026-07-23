@@ -60,7 +60,7 @@ label span, legend span { color: var(--orange); }
 input[type="text"] { width: 100%; border: 1.5px solid var(--ink); background: transparent; padding: 14px 15px; margin-bottom: 23px; font: inherit; outline: none; }
 input[type="text"]:focus { box-shadow: 3px 3px 0 var(--green); }
 fieldset { padding: 0; margin: 0 0 23px; border: 0; }
-.size-options { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; }
+.size-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
 .size-options input { position: absolute; opacity: 0; }
 .size-options label { display: grid; place-items: center; height: 44px; border: 1.5px solid var(--ink); cursor: pointer; font: 700 13px Montserrat, sans-serif; transition: .15s; }
 .size-options input:checked + label { color: var(--paper); background: var(--ink); box-shadow: 3px 3px 0 var(--orange); transform: translate(-2px,-2px); }
@@ -91,6 +91,6 @@ footer { min-height: 58px; padding: 20px; text-align: center; color: #737771; fo
 }
 @media (max-width: 480px) {
   .form-card { padding: 26px 20px; box-shadow: 6px 6px 0 var(--ink); }
-  .size-options { gap: 4px; }
+  .size-options { grid-template-columns: repeat(3, 1fr); gap: 4px; }
   h1 { font-size: 40px; }
 }
