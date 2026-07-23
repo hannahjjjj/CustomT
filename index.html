@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="티셔츠 사이즈와 사진을 제출하는 간단한 신청 페이지" />
+    <title>우리의 티셔츠</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="brand-mark" aria-hidden="true">T</div>
+        <p class="eyebrow">TEAM T-SHIRT PROJECT</p>
+        <h1 id="page-title">우리의 한 장면을<br /><em>티셔츠에 담아요.</em></h1>
+        <p class="intro-copy">이름과 사이즈, 가장 마음에 드는 사진 한 장을 보내주세요. 준비가 끝나면 예쁜 티셔츠로 만나요!</p>
+        <div class="doodle" aria-hidden="true">
+          <span>✦</span><span>☺</span><span>✦</span>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="form-title">
+        <div class="card-heading">
+          <span>01</span>
+          <div>
+            <p>YOUR DETAILS</p>
+            <h2 id="form-title">정보를 입력해주세요</h2>
+          </div>
+        </div>
+
+        <form id="submission-form">
+          <label for="name">이름 <span>*</span></label>
+          <input id="name" name="name" type="text" maxlength="40" autocomplete="name" placeholder="홍길동" required />
+
+          <fieldset>
+            <legend>티셔츠 사이즈 <span>*</span></legend>
+            <div class="size-options">
+              <input id="size-s" name="size" type="radio" value="S" required /><label for="size-s">S</label>
+              <input id="size-m" name="size" type="radio" value="M" /><label for="size-m">M</label>
+              <input id="size-l" name="size" type="radio" value="L" /><label for="size-l">L</label>
+              <input id="size-xl" name="size" type="radio" value="XL" /><label for="size-xl">XL</label>
+              <input id="size-2xl" name="size" type="radio" value="2XL" /><label for="size-2xl">2XL</label>
+            </div>
+          </fieldset>
+
+          <label for="photo">사진 <span>*</span></label>
+          <label class="upload-box" for="photo" id="upload-box">
+            <img id="preview" alt="선택한 사진 미리보기" hidden />
+            <div id="upload-prompt">
+              <strong>사진을 선택해주세요</strong>
+              <small>JPG, PNG, WEBP · 최대 10MB</small>
+              <b>사진 고르기</b>
+            </div>
+          </label>
+          <input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required hidden />
+
+          <label class="consent">
+            <input id="consent" type="checkbox" required />
+            <span>티셔츠 제작을 위한 개인정보 및 사진 수집에 동의합니다.</span>
+          </label>
+
+          <button type="submit" id="submit-button">제출하기 <span>→</span></button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>MADE FOR OUR GOOD DAYS · 2026</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
